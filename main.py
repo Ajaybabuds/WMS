@@ -10,9 +10,7 @@ st.title("Products Data")
 df = pd.read_csv("https://4809897.app.netsuite.com/core/media/media.nl?id=7472655&c=4809897&h=Pve73pI_qvxpMNEfP9MAmhvo5-PlX4301Yy5Jr1Bw7t6BmKq&_xt=.csv",sep=',')
 dfna=df.dropna(subset=['Class (no hierarchy)'])
 df1=dfna.drop_duplicates(keep='last')
-st.write("Whats Happening")
 df1['Date Created']= pd.to_datetime(df1['Date Created'])
-st.write("Still Facing")
 df1['year']=df1['Date Created'].dt.year
 df1['month']=df1['Date Created'].apply(lambda x:x.strftime('%B'))
 df1['month_num']=df1['Date Created'].dt.month
